@@ -3,13 +3,7 @@ task_definition:
   services:
     web:
       cpu_shares: 100
-      mem_limit: 128144000
+      mem_limit: 228144000
     php-fpm:
       cpu_shares: 100
-      mem_limit: 128144000
-    db:
-      cpu_shares: 100
-      mem_limit: 128144000
-    phpmyadmin:
-      cpu_shares: 100
-      mem_limit: 128144000
+      mem_limit: 228144000
