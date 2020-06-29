@@ -1,0 +1,29 @@
+version: '3'
+services:
+  web:
+    image: wushu06/magento-nginx:1.0
+    container_name: nginx
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./:/var/www/html
+    links:
+      - php-fpm
+    networks:
+        - frontend
+        - backend
+
+  php-fpm:
+    image: wushu06/magento-phpfpm-7.2:1.0
+    container_name: phpfpm
+    ports:
+      - 9000:9000
+    volumes:
+      - ./:/var/www/html/
+    networks:
+        - backend
+
+networks:
+   frontend:
+   backend:
